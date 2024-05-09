@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/009/948/950/small_2x/cute-blue-abstract-minimal-background-perfect-for-wallpaper-backdrop-postcard-background-vector.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        li span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .checkout-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+        .store-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .store-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="store-btn" onclick="goToStore()">Store</button>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <ul id="cart-items">
+        </ul>
+        <button class="checkout-btn" onclick="processOrder()">Checkout</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var productName = urlParams.get('product');
+            var price = urlParams.get('price');
+            var quantity = urlParams.get('quantity');
+            
+            var cart = document.getElementById('cart-items');
+            var li = document.createElement('li');
+            li.innerHTML = '<span>' + productName + ':</span> $' + price + ' x ' + quantity;
+            cart.appendChild(li);
+        };
+
+        function processOrder() {
+            alert("Your order has been processed!");
+            // You can add additional code here to handle order processing, such as sending data to a server
+        }
+
+        function goToStore() {
+            window.location.href = "pulse.html";
+        }
+    </script>
+</body>
+</html>

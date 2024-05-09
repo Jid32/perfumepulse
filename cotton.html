@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cotton Candy Unicorn Perfume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/009/948/950/small_2x/cute-blue-abstract-minimal-background-perfect-for-wallpaper-backdrop-postcard-background-vector.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .product h2 {
+            margin-top: 0;
+        }
+        .product p {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .btn-container {
+            text-align: right;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .box-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .box {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .content {
+            display: none;
+        }
+        #quantity {
+            width: 60px;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .store-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .store-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="store-btn" onclick="goToStore()">Store</button>
+    <div class="container">
+        <div class="box-container">
+            <div class="box" onclick="showDescription()">Description</div>
+            <div class="box" onclick="showSpecifications()">Specifications and Ingredients</div>
+            <div class="box" onclick="showFeatures()">Features</div>
+        </div>
+
+        <div class="content" id="description">
+            <p>Cotton Candy Unicorn Perfume is a magical and whimsical fragrance that will transport you to a world of sweetness and fantasy. With notes of cotton candy, marshmallow, and a hint of magic, this perfume is perfect for anyone who loves a little sparkle in their life.</p>
+        </div>
+
+        <div class="content" id="specifications">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+                <li>Volume: 50ml</li>
+                <li>INGREDIENTS: Water, Alcohol, Fragrance (Parfum) Propylene, Glycol, Citronellol, Limonene, Linalool, CI 16255</li>
+            </ul>
+        </div>
+
+        <div class="content" id="features">
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Magical and whimsical fragrance - Transport yourself to a world of sweetness and fantasy</li>
+                <li>Notes of cotton candy, marshmallow, and a hint of magic</li>
+                <li>Long-lasting - Enjoy the fragrance all day</li>
+            </ul>
+        </div>
+
+        <div class="product">
+            <img src="https://perfumedessertlondon.com/cdn/shop/files/5_24c09318-3403-4319-be35-f553b196ec5e.png?v=1688483367&width=3000" alt="Product Image">
+            <h2>Cotton Candy Unicorn Perfume</h2>
+            <p>Description of the product.</p>
+            <p>Price: $620.00</p>
+            <div class="btn-container">
+                <button class="btn" onclick="addToCart()">Add to Cart</button>
+                <input type="number" id="quantity" value="1">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDescription() {
+            document.getElementById("description").style.display = "block";
+            document.getElementById("specifications").style.display = "none";
+            document.getElementById("features").style.display = "none";
+        }
+
+        function showSpecifications() {
+            document.getElementById("description").style.display = "none";
+            document.getElementById("specifications").style.display = "block";
+            document.getElementById("features").style.display = "none";
+        }
+
+        function showFeatures() {
+            document.getElementById("description").style.display = "none";
+            document.getElementById("specifications").style.display = "none";
+            document.getElementById("features").style.display = "block";
+        }
+
+        function goToStore() {
+            window.location.href = "pulse.html";
+        }
+
+        function addToCart() {
+            var quantity = document.getElementById("quantity").value;
+            var productName = "Cotton Candy Unicorn Perfume";
+            var price = 620;
+            var url = "cart.html?product=" + productName + "&price=" + price + "&quantity=" + quantity;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
